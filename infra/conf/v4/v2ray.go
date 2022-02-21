@@ -96,11 +96,11 @@ func (c *InboundDetourAllocationConfig) Build() (*proxyman.AllocationStrategy, e
 }
 
 type InboundDetourConfig struct {
-	Protocol       string                         `json:"protocol"`
-	PortRange      *cfgcommon.PortRange           `json:"port"`
-	ListenOn       *cfgcommon.Address             `json:"listen"`
-	Settings       *json.RawMessage               `json:"settings"`
-	Tag            string                         `json:"tag"`
+	Protocol       string                         `json:"protocol"`  // 协议
+	PortRange      *cfgcommon.PortRange           `json:"port"`  // 端口
+	ListenOn       *cfgcommon.Address             `json:"listen"`  // 监听的地址
+	Settings       *json.RawMessage               `json:"settings"`  // 不同的协议有不同的配置
+	Tag            string                         `json:"tag"`  // 标签
 	Allocation     *InboundDetourAllocationConfig `json:"allocate"`
 	StreamSetting  *StreamConfig                  `json:"streamSettings"`
 	DomainOverride *cfgcommon.StringList          `json:"domainOverride"`
